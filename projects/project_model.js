@@ -15,4 +15,5 @@ function addProject(project) {
 function getProjectById(id) {
     return db('project')
     .where({id})
+    // .first()
 }
