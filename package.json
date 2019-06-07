@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.17.3",
+    "sqlite3": "^4.0.8"
+  },
+  "name": "webdb-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/josh182014/webdb-challenge.git",
+  "author": "josh182014 <josh182014@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
