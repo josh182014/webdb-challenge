@@ -19,11 +19,12 @@ router.get('/:id', async (req, res) => {
         Action.getActions(req.params.id)
         .then(action => {
             project.actions = action
-            // project.actions.push(action)
-            // console.log(project.actions)
-            // res.status(200).json({project: project[0], actions: project.actions[0]})
-            console.log(project)
-            res.status(200).json(project)
+            project.actions = []
+            project.actions.push(action)
+            console.log(project.actions)
+            res.status(200).json({project: project[0], actions: project.actions[0]})
+            // console.log(project)
+            // res.status(200).json(project)
         })
     })
     .catch(error => {
