@@ -14,11 +14,14 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
-    const projects = Project.getProjectById(req.params.id)
+    Project.getProjectById(req.params.id)
     .then(project => {
         Action.getActions(req.params.id)
         .then(action => {
-            res.status(200).json({project: project, action: action})
+            project.actions = []
+            project.actions.push(action)
+            console.log(project.actions)
+            res.status(200).json({project: project[0], actions: project.actions[0]})
         })
     })
     .catch(error => {
